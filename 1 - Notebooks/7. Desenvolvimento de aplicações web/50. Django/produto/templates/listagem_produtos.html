@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Meus Produtos</title>
+  </head>
+    <body>
+      <h1>Meus Produtos</h1>
+		<p>
+		  <a href="/cadastra_produtos/">Adicionar Novo Produto</a>
+		</p>
+        {% for i in produto %}
+          <div style= "width: 500px; border: solid 2px black; margin-bottom: 10px; padding-left: 8px;">
+            <p>
+              {{ i.id }} - <b>Nome:</b> {{ i.nome }}
+              <b>Preço:</b> R$ {{ i.preco }}
+            </p>
+            <p>
+              <b>Descrição:</b> {{ i.descricao }}
+            </p>
+			<p>
+			  <a href="{% url 'editar' i.id %}">Editar</a>
+			</p>
+			<p>
+			  <a href="{% url 'excluir' i.id %}">Excluir</a>
+			</p>
+          </div>
+        {% endfor %}
+      </body>
+</html>

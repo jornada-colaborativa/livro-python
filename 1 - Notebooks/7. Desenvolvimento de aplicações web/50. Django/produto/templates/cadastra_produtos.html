@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Cadastrar Produtos</title>
+  </head>
+    <body>
+      <h1>Cadastrar Produtos</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ formulario.as_p }}
+          <button type="submit">Salvar</button>
+        </form>
+      </body>
+</html>
